@@ -896,7 +896,7 @@ func (a *APIInstaller) registerResourceHandlers(path string, storage rest.Storag
 			supportedTypes := []string{
 				string(types.JSONPatchType),
 				string(types.MergePatchType),
-				string(types.StrategicMergePatchType),
+				// Strategic Merge Patch is not supported by CRD-backed resources.
 				string(types.ApplyYAMLPatchType),
 			}
 			if utilfeature.DefaultFeatureGate.Enabled(features.CBORServingAndStorage) {
